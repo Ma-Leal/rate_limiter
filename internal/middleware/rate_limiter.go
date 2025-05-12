@@ -30,7 +30,7 @@ func RateLimiterMiddleware(useCase *usecase.RateLimiterUseCase, ipCfg, tokenCfg 
 				return
 			}
 			if !allowed {
-				http.Error(w, "too many requests", http.StatusTooManyRequests)
+				http.Error(w, "you have reached the maximum number of requests or actions allowed within a certain time frame", http.StatusTooManyRequests)
 				return
 			}
 
